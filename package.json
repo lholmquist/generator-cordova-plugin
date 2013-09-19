@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "A generator for Yeoman",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "cordova",
+    "phonegap",
+    "plugins"
   ],
   "homepage": "https://github.com/lholmquist/generator-cordova-plugin",
   "bugs": "https://github.com/lholmquist/generator-cordova-plugin/issues",
