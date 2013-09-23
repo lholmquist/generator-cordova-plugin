@@ -13,7 +13,7 @@
   "author": {
     "name": "Lucas Holmquist",
     "email": "lholmqui@redhat.com",
-    "url": "https://github.com/lholmquist"
+    "url": "http://lholmquist.org"
   },
   "main": "app/index.js",
   "repository": {
