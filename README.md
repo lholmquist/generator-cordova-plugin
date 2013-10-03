@@ -1,6 +1,6 @@
 # generator-cordova-plugin [![Build Status](https://secure.travis-ci.org/lholmquist/generator-cordova-plugin.png?branch=master)](https://travis-ci.org/lholmquist/generator-cordova-plugin)
 
-A generator for [Yeoman](http://yeoman.io).
+A Cordova plugin generator for [Yeoman](http://yeoman.io).
 
 
 ## Getting Started
@@ -16,6 +16,15 @@ Finally, initiate the generator:
 ```
 $ yo cordova-plugin
 ```
+
+There is now a sub generator to add a platform to plugin:
+
+```
+$ yo cordova-plugin:platform add
+```
+
+_currently only ios and android have been added_
+
 
 ## License
 
