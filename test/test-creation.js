@@ -2,6 +2,7 @@
 'use strict';
 
 var path    = require('path');
+var fs = require('fs');
 var helpers = require('yeoman-generator').test;
 
 
@@ -20,11 +21,14 @@ describe('cordova-plugin generator', function () {
     });
 
     it('creates expected files', function (done) {
+        if( fs.existsSync( path.join(__dirname, 'temp', 'Name') ) ) {
+            fs.rmdirSync( path.join(__dirname, 'temp', 'Name') );
+        }
+
         var expected = [
-            'www/plugin.js',
-            'README.md',
-            'plugin.xml',
-            'src/'
+            'Name/www/Name.js',
+            'Name/plugin.xml',
+            'Name/src/'
         ];
 
         helpers.mockPrompt(this.app,

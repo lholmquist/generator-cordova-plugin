@@ -1,17 +1,15 @@
 'use strict';
 var util = require('util');
-var path = require('path');
 var yeoman = require('yeoman-generator');
+var plugman = require('plugman');
 
 
 var CordovaPluginGenerator = module.exports = function CordovaPluginGenerator(args, options, config) {
     yeoman.generators.Base.apply(this, arguments);
 
     this.on('end', function () {
-        this.installDependencies({ skipInstall: options['skip-install'] });
+        console.log( 'Setup Complete' );
     });
-
-    this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 };
 
 util.inherits(CordovaPluginGenerator, yeoman.generators.Base);
@@ -25,7 +23,7 @@ CordovaPluginGenerator.prototype.askFor = function askFor() {
     var prompts = [{
         name: 'pluginName',
         message: 'Enter ther plugin name:',
-        default: 'coolPlugin'
+        default: 'CoolPlugin'
     },
     {
         name: 'pluginDesc',
@@ -54,14 +52,13 @@ CordovaPluginGenerator.prototype.askFor = function askFor() {
 };
 
 CordovaPluginGenerator.prototype.app = function app() {
-    this.mkdir('src');
-    this.mkdir('www');
-
-    this.template('_plugin.js', 'www/plugin.js');
-    this.template('_plugin.xml', 'plugin.xml');
-};
-
-CordovaPluginGenerator.prototype.projectfiles = function projectfiles() {
-    this.template('_README.md', 'README.md');
-    this.copy('_package.json','package.json');
+    var that = this;
+    plugman.create( this.pluginName, this.pluginID, this.pluginVersion, '.', { 'description': this.pluginDesc }, function( err ) {
+        if( err ) {
+            console.log( err );
+        } else {
+            that.template('_README.md', 'README.md');
+            that.copy('_package.json','package.json');
+        }
+    } );
 };
