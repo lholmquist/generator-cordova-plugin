@@ -23,6 +23,12 @@ There is now a sub generator to add a platform to plugin:
 $ yo cordova-plugin:platform add
 ```
 
+or if you want to remove a platform
+
+```
+$ yo cordova-plugin:platform remove
+```
+
 _currently only ios and android have been added_
 
 

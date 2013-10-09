@@ -27,13 +27,15 @@ PlatformGenerator.prototype.askFor = function askFor() {
             choices: [ 'android', 'ios' ],
             default: 'android'
         }];
-    } //else if( this.name === 'remove' ) {
-    //     prompts = [{
-    //         name: 'platformName',
-    //         message: 'Enter a Platform to remove',
-    //         default: 'android'
-    //     }];
-    // }
+    } else if( this.name === 'remove' ) {
+        prompts = [{
+            name: 'platformName',
+            message: 'Enter a Platform to remove',
+            type: 'list',
+            choices: [ 'android', 'ios' ],
+            default: 'android'
+        }];
+    }
 
     if( !prompts.length ) {
         console.log( this.name + ' is not a valid option' );
@@ -50,7 +52,7 @@ PlatformGenerator.prototype.askFor = function askFor() {
 };
 
 PlatformGenerator.prototype.doPlatformStuff = function addPlatform() {
-    plugman.platform( this.platformName, function( err ) {
+    plugman.platform( { operation: this.name, platform_name: this.platformName }, function( err ) {
         if( err ) {
             console.log( err );
         }
