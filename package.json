@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "yeoman-generator": "~0.13.0",
-    "plugman": "git://github.com/lholmquist/cordova-plugman.git#6c560c27ec3eb26025f722d5f6e68bf51cb37e3c"
+    "plugman": "git://github.com/apache/cordova-plugman.git#ce8c421481ff04e87eaf81442e9504b6358c13c3"
   },
   "devDependencies": {
     "mocha": "~1.12.0"
