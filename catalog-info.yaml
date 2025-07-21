@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: generator-cordova-plugin
+  annotations:
+    github.com/project-slug: lholmquist/generator-cordova-plugin
+spec:
+  type: other
+  lifecycle: unknown
+  owner: user:default/guest
